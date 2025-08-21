@@ -1,35 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AppLayout from "./component/layout/AppLayout";
+import NotFoundPage from "./component/NotFoundPage";
+import Home from "./component/pages/Home";
+import Login from "./component/auth/Login";
+import Register from "./component/auth/Register";
+import StoreList from "./component/pages/Stores";
 
-function App() {
-  const [count, setCount] = useState(0)
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <NotFoundPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/stores",
+        element: <StoreList />,
+      },
+      // {
+      //   path: "/saved",
+      //   element: <SaveJob />,
+      // },
+      // {
+      //   path: "/deatils/:id",
+      //   element: <JobDeatils />,
+      // },
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      // {
+      //   path: "/contact",
+      //   element: <Contact />,
+      // },
 
-export default App
+      // {
+      //   path: "/profile",
+      //   element: <Profile />,
+      // },
+
+      // {
+      //   path: "/recruiter/dashboard",
+      //   element: <Dashboard />,
+      // },
+      // {
+      //   path: "/recruiter/company/create",
+      //   element: <CompanyCreate />,
+      // },
+      // {
+      //   path: "//recruiter/job/create",
+      //   element: <JobPost />,
+      // },
+      // {
+      //   path: "/recruiter/company/:id",
+      //   element: <CompanySetup />,
+      // },
+      // {
+      //   path: "/recruiter/jobs/:id/applicants",
+      //   element: <Applicants />,
+      // },
+    ],
+  },
+]);
+const App = () => {
+  return <RouterProvider router={router} />;
+};
+export default App;
