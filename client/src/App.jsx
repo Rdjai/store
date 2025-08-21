@@ -29,45 +29,7 @@ const router = createBrowserRouter([
         path: "/stores",
         element: <StoreList />,
       },
-      // {
-      //   path: "/saved",
-      //   element: <SaveJob />,
-      // },
-      // {
-      //   path: "/deatils/:id",
-      //   element: <JobDeatils />,
-      // },
 
-      // {
-      //   path: "/contact",
-      //   element: <Contact />,
-      // },
-
-      // {
-      //   path: "/profile",
-      //   element: <Profile />,
-      // },
-
-      // {
-      //   path: "/recruiter/dashboard",
-      //   element: <Dashboard />,
-      // },
-      // {
-      //   path: "/recruiter/company/create",
-      //   element: <CompanyCreate />,
-      // },
-      // {
-      //   path: "//recruiter/job/create",
-      //   element: <JobPost />,
-      // },
-      // {
-      //   path: "/recruiter/company/:id",
-      //   element: <CompanySetup />,
-      // },
-      // {
-      //   path: "/recruiter/jobs/:id/applicants",
-      //   element: <Applicants />,
-      // },
     ],
   },
 ]);
